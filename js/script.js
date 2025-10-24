@@ -1,14 +1,25 @@
-// Session Storage Cart
+// --- SESSION STORAGE CART ---
 let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
-// Add to Cart
-function addToCart(itemName) {
-    cart.push(itemName);
+// --- ADD TO CART ---
+function addToCart(item) {
+    cart.push(item);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     alert('Item added.');
 }
 
-// View Cart Modal
+// Attach Add to Cart buttons dynamically
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        // Get the row containing the button
+        const row = button.closest('tr');
+        const title = row.querySelector('td:nth-child(2)').textContent;
+        const description = row.querySelector('td:nth-child(3)').textContent;
+        addToCart({ title, description });
+    });
+});
+
+// --- VIEW CART MODAL ---
 const modal = document.getElementById('cart-modal');
 const btn = document.getElementById('view-cart-btn');
 const span = document.getElementsByClassName('close')[0];
@@ -38,13 +49,13 @@ function displayCart() {
     } else {
         cart.forEach(item => {
             let li = document.createElement('li');
-            li.textContent = item;
+            li.innerHTML = `<strong>${item.title}</strong>: ${item.description}`;
             cartItems.appendChild(li);
         });
     }
 }
 
-// Clear Cart
+// --- CLEAR CART ---
 clearBtn.onclick = function() {
     cart = [];
     sessionStorage.setItem('cart', JSON.stringify(cart));
@@ -52,7 +63,7 @@ clearBtn.onclick = function() {
     alert('Cart cleared.');
 }
 
-// Process Order
+// --- PROCESS ORDER ---
 processBtn.onclick = function() {
     if(cart.length > 0) {
         alert('Thank you for your order!');
@@ -64,12 +75,12 @@ processBtn.onclick = function() {
     }
 }
 
-// Subscribe Form
-document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+// --- SUBSCRIBE FORM ---
+document.getElementById('footer-email')?.addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = document.getElementById('email').value;
+    const email = document.getElementById('footer-email').value;
     if(email) {
         alert(`Thank you for subscribing, ${email}!`);
-        document.getElementById('subscribe-form').reset();
+        document.getElementById('footer-email').reset();
     }
 });
