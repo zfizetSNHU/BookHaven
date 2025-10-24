@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Book Haven</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="images/logo.png" alt="Book Haven Bookstore Logo" class="logo">
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="custom.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="description">
+            <h2>Welcome to Book Haven Bookstore!</h2>
+            <p>
+                Book Haven Bookstore is your local treasure for books, magazines, journals, and office supplies.
+                We are dedicated to fostering literary exploration and creating a vibrant community of book lovers.
+            </p>
+            <h3>Hours of Operation</h3>
+            <ul>
+                <li>Monday–Friday: 9 a.m. to 8 p.m.</li>
+                <li>Saturday: 10 a.m. to 6 p.m.</li>
+                <li>Sunday: 11 a.m. to 5 p.m.</li>
+            </ul>
+        </section>
+
+        <section id="feedback">
+            <h2>Feedback & Custom Orders</h2>
+            <form id="feedback-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required placeholder="Enter your name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+
+                <label for="order">Feedback / Custom Order:</label>
+                <textarea id="order" required placeholder="Your message here"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="feedback-success"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <form id="subscribe-form">
+            <label for="footer-email">Subscribe to our Newsletter:</label>
+            <input type="email" id="footer-email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="social-media">
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="gallery.html">Gallery</a> |
+            <a href="about.html">About Us</a> |
+            <a href="custom.html">Community</a>
+        </nav>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
