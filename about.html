@@ -12,7 +12,7 @@
         <img src="images/logo.png" alt="Book Haven Bookstore Logo" class="logo">
         <h1>About Us</h1>
         <nav>
-            <ul>
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -23,6 +23,7 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Description Section -->
         <section id="description">
             <h2>Welcome to Book Haven Bookstore!</h2>
             <p>
@@ -37,27 +38,27 @@
             </ul>
         </section>
 
+        <!-- Feedback / Custom Order Form -->
         <section id="feedback">
             <h2>Feedback & Custom Orders</h2>
-            <form id="feedback-form">
+            <form id="custom-order-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" required placeholder="Enter your name">
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" required placeholder="Enter your email">
 
-                <label for="order">Feedback / Custom Order:</label>
-                <textarea id="order" required placeholder="Your message here"></textarea>
+                <label for="message">Feedback / Custom Order:</label>
+                <textarea id="message" required placeholder="Your message here"></textarea>
 
                 <button type="submit">Submit</button>
             </form>
-            <div id="feedback-success"></div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <form id="subscribe-form">
+        <form id="footer-email">
             <label for="footer-email">Subscribe to our Newsletter:</label>
             <input type="email" id="footer-email" placeholder="Enter your email" required>
             <button type="submit">Subscribe</button>
@@ -75,6 +76,7 @@
         </nav>
     </footer>
 
+    <!-- Script -->
     <script src="js/script.js"></script>
 </body>
 </html>
